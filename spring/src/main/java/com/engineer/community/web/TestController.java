@@ -1,4 +1,4 @@
-package com.engineer.community;
+package com.engineer.community.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,5 +10,7 @@ public class TestController {
     public String test() {
         return "test";
     }
+
+
 
 }
