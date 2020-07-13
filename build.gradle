@@ -24,12 +24,16 @@ repositories {
     mavenCentral()
     jcenter()
 }
-
+bootJar{
+    archiveFileName = 'bcproject.jar'
+}
 task print(){
     doLast{
         println "github push complete"
     }
 }
+
+
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
