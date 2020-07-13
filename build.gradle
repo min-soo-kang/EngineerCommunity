@@ -17,7 +17,7 @@ apply plugin : 'org.springframework.boot'
 apply plugin : 'io.spring.dependency-management'
 
 group 'com.engineer.community'
-version '1.0-SNAPSHOT'+new Date().format("yyyyMMddHHmmss")
+
 sourceCompatibility = 1.8
 
 repositories {
@@ -30,6 +30,10 @@ task print(){
         println "github push complete"
     }
 }
+bootJar{
+    archivesBaseName='bcproject'
+}
+
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
