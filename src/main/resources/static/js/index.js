@@ -1,13 +1,33 @@
-let main = {
+let index = {
     init : function() {
-        let _this = this;
+        const _this = this;
+        $("#btn_save").on("click", function() {
+            _this.save();
+        });
 
-        _this.start();
     },
+    save : function() {
+        let data = {
+            title:$("#title").val(),
+            author:$("#author").val(),
+            content:$("#content").val()
+        };
 
-    start : function() {
-        alert("Hello World");
+        $.ajax({
+            type:"POST",
+            url:"/api/posts",
+            dataType:"json",
+            contentType:"application/json; charset=utf-8",
+            data:JSON.stringify(data)
+        }).done(function() {
+            alert("성공");
+            window.location.href ="/";
+        }).fail(function(e) {
+            alert(JSON.stringify(e));
+        });
+
     }
 };
 
-main.init();
+
+index.init();
