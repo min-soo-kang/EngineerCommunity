@@ -10,6 +10,32 @@
 
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-bordered table-hover table-striped">
+                <thead class="thead-strong">
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>최종수정일</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#posts}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{title}}</td>
+                        <td>{{author}}</td>
+                        <td>{{modifiedDate}}</td>
+                    </tr>
+                {{/posts}}
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
 </div>
 
 {{>layout/footer}}
